@@ -57,11 +57,13 @@ public class LoginTest {
     }
     
     @Test
-    // 
+    //Phone number validation
     public void testCheckCellPhoneNumber() {
         System.out.println("checkCellPhoneNumber");
         Login instance = new Login();
         
+        /*Check if the number is valid and it
+        has the regex pattern(SouthAfricas international code +27)*/
         instance.setCellPhoneNumber("+27838968976");
         assertTrue(instance.checkCellPhoneNumber(), "Cell phone number successfully captured");
         
