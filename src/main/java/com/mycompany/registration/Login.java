@@ -89,7 +89,7 @@ public class Login {
         }else if(!checkPasswordComplexity()){
             return "Password is not correctly formatted, please ensure that the password contains at least eight characters, a capital letter, a number and a special character.";
         }else if(!checkCellPhoneNumber()){
-            return "Cell phone number incorrectly formetted or does not contain international code.";
+            return "Cell phone number incorrectly formatted or does not contain international code.";
         }else{
             return "Username and Password successfully captured.";
         }

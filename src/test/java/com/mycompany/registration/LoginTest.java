@@ -69,7 +69,7 @@ public class LoginTest {
         
         //invalid cell phone number
         instance.setCellPhoneNumber("0838768976");
-        assertFalse(instance.checkCellPhoneNumber(), "Cell phone number incorrectly formetted "
+        assertFalse(instance.checkCellPhoneNumber(), "Cell phone number incorrectly formatted "
                 + "or does not contain international code");
     }
      
