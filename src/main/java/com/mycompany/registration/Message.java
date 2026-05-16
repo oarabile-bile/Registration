@@ -41,6 +41,15 @@ public class Message {
        return firstTwoId + ":" + messageNumber + ":" + firstWord + lastWord;
    }
    
+   public String checkMessageLength(){
+       if(this.messageText.length() > 250){
+           int excess = this.messageText.length() - 250;
+           return "Message exceeds 250 characters by" + excess + "; please reduce the size.";
+       }
+       
+       return "Message ready to send.";
+   }
+   
    public String checkRecipientCell(){
        if (Pattern.matches("^\\+27[0-9]{9}$", recipient)) {
             return "Cell phone number successfully captured.";
