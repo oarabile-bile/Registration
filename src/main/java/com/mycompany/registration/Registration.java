@@ -10,6 +10,8 @@ import java.util.regex.Pattern;
  * @author Student
  */
 public class Registration {
+    
+    private static int totalSentMessages = 1;
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -81,7 +83,10 @@ public class Registration {
             System.out.println("\n" + loginStatus);
             
             if(loginLogic.loginUser(enteredUsername, enteredPassword)){
+                System.out.println("\nWelcome to QuickChat");
                 showQuickChatMenu(input);
+            }else{
+                System.out.println("Username or Password incorrect, please try again.");
             }
     }
     
@@ -114,9 +119,9 @@ public class Registration {
         
         int num = input.nextInt();
         input.nextLine();
-        int sentCount = 0;
+        int sentCount = 1;
         
-        for(int i = 0; i < num; i++){
+        for(int i = 1; i < num; i++){
              System.out.println("\n--- Message " + i + " ---");
              
             System.out.print("Enter recipient: ");
@@ -126,7 +131,8 @@ public class Registration {
             String text = input.nextLine();
 
             if (text.length() > 250) {
-                System.out.println("Message too long!");
+                int excess = text.length() - 250;
+                System.out.println("Message exceeds 250 characters by" + excess + "; please reduce the size.");
                 continue;
             }
 
@@ -134,16 +140,23 @@ public class Registration {
             System.out.println(message.checkRecipientCell());
             
             if(message.checkRecipientCell().contains("successflly")){
-                System.out.println("1, Send 2. Disregard 3. Store");
-                
+                System.out.println("\nSelect an action: ");
+                System.out.println("1. Send");
+                System.out.println("2. Disregard");
+                System.out.println("3. Store");
+                System.out.println("Choice: ");
                 int action = input.nextInt();
                 input.nextLine();
                 
                 if(action == 1){
-                    sentCount++;
+                    totalSentMessages++;
                     System.out.println("Message Sent!");
                     System.out.println("ID: " + message.getMessageId());
                     System.out.println("Hash: " + message.createMessageHash());
+                    System.out.println("Recipient: " + message.getRecipient());
+                    System.out.println("Message: " + message.getMessageText());
+                }else if(action == 2){
+                    System.out.println("Press 0 to delete the message.");
                 }
             }
         }
