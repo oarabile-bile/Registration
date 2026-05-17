@@ -42,9 +42,9 @@ public class Message {
    }
    
    public String checkMessageLength(){
-       if(this.messageText.length() > 250){
+       if(this.messageText != null && this.messageText.length() > 250){
            int excess = this.messageText.length() - 250;
-           return "Message exceeds 250 characters by" + excess + "; please reduce the size.";
+           return "Message exceeds 250 characters by " + excess + ", please reduce the size.";
        }
        
        return "Message ready to send.";
