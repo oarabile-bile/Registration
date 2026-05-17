@@ -40,11 +40,11 @@ public class MessageTest {
     
     @Test
     public void testMessageLengthFailure(){
-        String overLimit = "a".repeat(251);
+        String overLimit = "a".repeat(255);
         //Overlimit the text is long 
         Message message = new Message(0, "+27718693002", overLimit);
-        
-        String expectedErrorMessage = "Message exceeds 250 characters by 1, please reduce the size.";
+       
+        String expectedErrorMessage = "Message exceeds 250 characters by 5, please reduce the size.";
         assertEquals(expectedErrorMessage, message.checkMessageLength());
     }
     

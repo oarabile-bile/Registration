@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.mycompany.registration.LoginTest" time="0.079" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.mycompany.registration.MessageTest" time="0.078" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="25"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,8 +15,9 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Apache NetBeans\jdk\bin"/>
-    <property name="sun.java.command" value="C:\Users\Student\AppData\Local\Temp\surefire1636771601393872089\surefirebooter-20260516192814963_3.jar C:\Users\Student\AppData\Local\Temp\surefire1636771601393872089 2026-05-16T19-28-14_743-jvmRun1 surefire-20260516192814963_1tmp surefire_0-20260516192814963_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Student\AppData\Local\Temp\surefire13300012706414093674\surefirebooter-20260517202407508_3.jar C:\Users\Student\AppData\Local\Temp\surefire13300012706414093674 2026-05-17T20-24-07_347-jvmRun1 surefire-20260517202407508_1tmp surefire_0-20260517202407508_2tmp"/>
     <property name="jdk.debug" value="release"/>
+    <property name="test" value="com.mycompany.registration.MessageTest"/>
     <property name="surefire.test.class.path" value="C:\Users\Student\Documents\NetBeansProjects\Registration\target\test-classes;C:\Users\Student\Documents\NetBeansProjects\Registration\target\classes;C:\Users\Student\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.3\junit-jupiter-api-5.10.3.jar;C:\Users\Student\.m2\repository\org\junit\platform\junit-platform-commons\1.10.3\junit-platform-commons-1.10.3.jar;C:\Users\Student\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Student\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.3\junit-jupiter-params-5.10.3.jar;C:\Users\Student\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.3\junit-jupiter-engine-5.10.3.jar;C:\Users\Student\.m2\repository\org\junit\platform\junit-platform-engine\1.10.3\junit-platform-engine-1.10.3.jar;C:\Users\Student\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\Student"/>
@@ -30,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Student\AppData\Local\Temp\surefire1636771601393872089\surefirebooter-20260516192814963_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Student\AppData\Local\Temp\surefire13300012706414093674\surefirebooter-20260517202407508_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="25.0.1+8-LTS"/>
@@ -61,16 +62,9 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="69.0"/>
   </properties>
-  <testcase name="testCheckPasswordComplexity" classname="com.mycompany.registration.LoginTest" time="0.037">
-    <system-out><![CDATA[checkPasswordComplexity
-]]></system-out>
-  </testcase>
-  <testcase name="testCheckUserName" classname="com.mycompany.registration.LoginTest" time="0.003">
-    <system-out><![CDATA[checkUserName
-]]></system-out>
-  </testcase>
-  <testcase name="testCheckCellPhoneNumber" classname="com.mycompany.registration.LoginTest" time="0.003">
-    <system-out><![CDATA[checkCellPhoneNumber
-]]></system-out>
-  </testcase>
+  <testcase name="testMessageHash" classname="com.mycompany.registration.MessageTest" time="0.031"/>
+  <testcase name="testRecipientFormatfailure" classname="com.mycompany.registration.MessageTest" time="0.002"/>
+  <testcase name="testRecipientFormatSuccess" classname="com.mycompany.registration.MessageTest" time="0.003"/>
+  <testcase name="testMessageLengthSuccess" classname="com.mycompany.registration.MessageTest" time="0.001"/>
+  <testcase name="testMessageLengthFailure" classname="com.mycompany.registration.MessageTest" time="0.005"/>
 </testsuite>
