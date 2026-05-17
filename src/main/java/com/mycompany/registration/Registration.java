@@ -129,6 +129,8 @@ public class Registration {
             
             System.out.print("Enter message (max 250): ");
             String text = input.nextLine();
+            
+            
 
             if (text.length() > 250) {
                 int excess = text.length() - 250;
@@ -137,9 +139,15 @@ public class Registration {
             }
 
             Message message = new Message(i, recipient, text);
+            
+            String lengthCheck = message.checkMessageLength();
+            if(lengthCheck.contains("exceeds")){
+                System.out.println(lengthCheck);
+                continue;
+            }
             System.out.println(message.checkRecipientCell());
             
-            if(message.checkRecipientCell().contains("successflly")){
+            if(message.checkRecipientCell().contains("successfully")){
                 System.out.println("\nSelect an action: ");
                 System.out.println("1. Send");
                 System.out.println("2. Disregard");
