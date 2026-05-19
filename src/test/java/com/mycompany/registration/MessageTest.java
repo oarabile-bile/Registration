@@ -53,5 +53,5 @@ public class MessageTest {
         Message message = new Message(0, "+27718693002", "Hi Tonight");
         String hash = message.createMessageHash();
         assertTrue(hash.endsWith(":0:HITONIGHT"));
-    }    
+    } 
 }

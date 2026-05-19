@@ -57,6 +57,15 @@ public class Message {
         return "Cell phone number incorrectly formatted or does not contain international code.";
    }
    
+   public String storeMessage(){
+       return "{\n" +
+               " \"messageId\": \"" + messageId + "\",\n" +
+               " \"recipient\": \"" + recipient + "\",\n" +
+               " \"messageText\": \"" + messageText + "\",\n" +
+               " \"messageHash\": \"" + createMessageHash() + "\",\n" +
+               "}";
+   }
+   
    public String getMessageId() {return messageId;}
    public String getRecipient() {return recipient;}
    public String getMessageText() {return messageText;}

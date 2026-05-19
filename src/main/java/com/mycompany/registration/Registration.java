@@ -5,13 +5,15 @@
 package com.mycompany.registration;
 import java.util.Scanner;
 import java.util.regex.Pattern;
+import java.io.FileWriter;
+import java.io.IOException;
 /**
  *
  * @author Student
  */
 public class Registration {
     
-    private static int totalSentMessages = 1;
+    private static int totalSentMessages = 0;
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -119,9 +121,9 @@ public class Registration {
         
         int num = input.nextInt();
         input.nextLine();
-        int sentCount = 1;
         
-        for(int i = 1; i < num; i++){
+        
+        for(int i = 1; i <= num; i++){
              System.out.println("\n--- Message " + i + " ---");
              
             System.out.print("Enter recipient: ");
@@ -165,9 +167,21 @@ public class Registration {
                     System.out.println("Message: " + message.getMessageText());
                 }else if(action == 2){
                     System.out.println("Press 0 to delete the message.");
+                }else if(action == 3){
+                    totalSentMessages++;
+                    saveMessageToJson(message.storeMessage());
                 }
             }
         }
-        System.out.println("\nTotal messages sent in this session: " + sentCount);
+        System.out.println("\nTotal messages sent in this session: " + totalSentMessages);
+    }
+    
+    private static void saveMessageToJson(String jsonContent){
+        try(FileWriter writer = new FileWriter("messages.json", true)){
+            writer.write(jsonContent + "\n");
+            System.out.println("Message successfully stored.");
+        }catch(IOException e){
+            System.out.println("Error storing JSON: " + e.getMessage());
+        }
     }
 }
